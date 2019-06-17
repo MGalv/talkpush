@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Talkpush</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="container">
+    <% if flash[:success] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:success] %>
+      </div>
+    <% elsif flash[:danger] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

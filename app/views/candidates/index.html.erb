@@ -1,0 +1,22 @@
+<h1>Welcome to the real world, Neo!</h1>
+
+<%= link_to "Sync Candidates", talkpush_load_candidates_path, method: :post, role: 'button', class: 'btn btn-primary btn-lg btn-block' %>
+
+<%- if @candidates.exists? %>
+  <table class="candidates table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @candidates %>
+    </tbody>
+  </table>
+<% else %>
+  <h2>Sadly, there are no candidates loaded.</h2>
+  <p>Please, click on the Sync Candidates button and pull all the candidates available in the spreadsheet.</p>
+<% end %>
